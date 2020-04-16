@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<title>Survey Mahasiswa Undip</title>
+</h:head>
+
+ 
+<body> 
+
+<h:form>
+<h1>Survey Kepuasaan Mahasiswa Terhadap Fasilitas Kampus Undip</h1>
+
+	<div superClass="formTabel">
+	Nama Depan : <h:inputText value="#{index.firstName}" required="true" requiredMessage="Nama Tidak boleh kosong!!" id="form1"></h:inputText><h:message for="form1"></h:message>
+	<br /><br />
+	Nama Belakang : <h:inputText value="#{index.lastName}" required="true" requiredMessage="Nama Tidak boleh kosong!!" id="form2"></h:inputText><h:message for="form2"></h:message>
+	<br /><br />
+	Alamat : <h:inputText value="#{index.address}" required="true" requiredMessage="Field Tidak boleh kosong!!" id="form3"></h:inputText><h:message for="form3"></h:message>
+	<br /><br />
+	Kota Asal : <h:inputText value="#{index.city}" required="true" requiredMessage="Field Tidak boleh kosong!!" id="form4"></h:inputText><h:message for="form4"></h:message>
+	<br /><br />
+	Kode Pos : <h:inputText value="#{index.codePos}" required="true" requiredMessage="Field Tidak boleh kosong!!" id="form5"></h:inputText><h:message for="form5"></h:message>
+	<br /><br />
+	Nomer Hp : <h:inputText value="#{index.phoneNumber}" required="true" requiredMessage="Field Tidak boleh kosong!!" id="form6"></h:inputText><h:message for="form6"></h:message>
+	<br /><br />
+	Email : <h:inputText value="#{index.email}" required="true" requiredMessage="Field Tidak boleh kosong!!" id="form7"></h:inputText><h:message for="form7"></h:message>
+	<br /><br />
+	Tanggal Survey : <h:inputText value="#{index.date}" type="date" required="true" requiredMessage="Field Tidak boleh kosong!!" id="form8"></h:inputText><h:message for="form8"></h:message>
+	</div>
+	<br /><br />
+	Fasilitas Favorit Di Kampus :
+	<h:selectManyCheckbox value="#{index.favoritPlaces}">
+	
+	<f:selectItem itemValue="Taman GKB" itemLabel="Taman GKB"></f:selectItem>
+	<f:selectItem itemValue="Waduk" itemLabel="Waduk"></f:selectItem>
+	<f:selectItem itemValue="Stadion" itemLabel="Stadion"></f:selectItem>
+	<f:selectItem itemValue="Perpustakaan" itemLabel="Perpustakaan"></f:selectItem>
+	<f:selectItem itemValue="Xiatsu" itemLabel="Xiatsu"></f:selectItem>
+	
+	</h:selectManyCheckbox>
+	<br /><br />
+	Apa yang Anda sukai tentang Undip :
+	<h:selectOneRadio value="#{index.favoritStudent}">
+	<f:selectItem itemValue="WiFi" itemLabel="WiFi"></f:selectItem>
+	<f:selectItem itemValue="Kuliner" itemLabel="Kuliner"></f:selectItem>
+	<f:selectItem itemValue="Social Standart" itemLabel="Social Standart"></f:selectItem>	
+	</h:selectOneRadio>
+	
+	<br /><br />
+	
+	Seberapa mungkin Anda merekomendasikan Undip kepada calon mahasiswa lain :
+	<h:selectOneMenu value="#{index.recommendation}">
+	<f:selectItem itemValue="Sangat Mungkin" itemLabel="Sangat Mungkin"></f:selectItem>
+	<f:selectItem itemValue="Mungkin" itemLabel="Mungkin"></f:selectItem>
+	<f:selectItem itemValue="Tidak Mungkin" itemLabel="Tidak Mungkin"></f:selectItem>
+	</h:selectOneMenu>
+	
+	<br /><br />
+	Apa alasan anda : 
+	<h:inputTextarea value="#{index.textArea}">
+	
+	</h:inputTextarea>
+	<br /><br />
+	<h:commandButton value="submit" action="survey_result"></h:commandButton>
+</h:form>
+
+</body> 
+</html>
