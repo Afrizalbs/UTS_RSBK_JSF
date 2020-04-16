@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>Hasil Survey</title>
+</h:head> 
+
+<body> 
+
+	Survey Anda telah Diterima :
+	<br /><br />
+	#{index.firstName} #{index.lastName}
+	<br /><br />
+	#{index.email}
+	<br /><br />
+	#{index.phoneNumber}
+	<br /><br />
+	Mahasiswa ini mempunyai fasilitas favorit yaitu : 
+	
+	<ul>
+	<ui:repeat var="place" value="#{index.favoritPlaces}">
+	<li>#{place}</li>
+	</ui:repeat>
+	</ul>
+	
+	<br /><br />
+	Yang disukai #{index.firstName} #{index.lastName} dari Undip adalah #{index.favoritStudent}.
+
+
+	<br /><br />
+	#{index.firstName} #{index.lastName} #{index.recommendation} kepada calon mahasiswa lain karena #{index.textArea}
+	
+	
+</body> 
+</html>
